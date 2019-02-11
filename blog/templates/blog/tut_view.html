@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="justify-content-center">
+    {% for tut in tuts %}
+        <h4><a href="">{{ tut.title }}</a></h4>
+        <h4><a href="">{{ tut.category }}</a></h4>
+        <p>published: {{ tut.intro }}</p>
+        <h4>  <a href=" {{ tut.video }}">video tutorial</a></h4>
+
+
+    {% endfor %}
+    </div>
+{% endblock %}

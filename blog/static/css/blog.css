@@ -1,0 +1,57 @@
+.page-header {
+    background-color:rgb(179, 179, 219);
+    margin-top: 0;
+    padding: 10 10 10 10px;
+    text-align: center;     
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ad2525;
+    font-size: 36pt;
+   
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.section-gap{
+    padding-left: 40px;
+    background-color: rgb(214, 214, 214);
+    padding-top: 40px;
+    width: 100%;
+
+   
+}
+
+h1, h2, h3, h4 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.date {
+    color: #161212;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
