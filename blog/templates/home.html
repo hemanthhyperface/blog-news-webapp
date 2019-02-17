@@ -1,23 +1,46 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="jumbotron-fluid">
- <h1> Hi {{ user.username }}! </h1>
-  <h1>  <a href="{%  url 'post_list' %}"> <span class="badge badge-primary">See post</span></a></h1>
-  <p><a href="{% url 'logout' %}">logout</a></p>
+<div class="section-gap">
+  <div class="jumbotron-fluid">
 
+    <h2> Hi {{ user.username }}!. <i class="far fa-hand-paper"></i> <br /> Welcome to the world of information </h2>
+    <h2> <a href="{%  url 'post_list' %}"> <span class="badge badge-primary">See post</span></a></h2>
+    <h2> <a href="{%  url 'news' %}"> <span class="badge badge-primary"> today's top news</span></a></h2>
+
+
+  </div>
 </div>
+
 {% else %}
 
 
-<div class="section-gap">
-<div class="container-fluid text-center">
+<div class="container-fluid">
 
-  <h4 class="text-center">You are not logged in</h4>
- <a href="{% url 'login' %}"> <button type="button" class="btn-primary btn-lg">login</button></a>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="section-gap">
+        <h2> Hello welcome to the world of information</h2>
+        <h1> <a href="{%  url 'post_list' %}"> <span class="badge badge-primary">See post</span></a></h1>
+        <h1> <a href="{%  url 'news' %}"> <span class="badge badge-primary">today's top news</span></a></h1>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="section-gap">
+
+<a href="{% url 'login'%}"><button type="button" class="btn-info btn-lg">Login</button></a>
+
+
+
+        
+
+
 
 </div>
 </div>

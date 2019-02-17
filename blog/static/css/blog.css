@@ -1,32 +1,74 @@
-.page-header {
-    background-color:rgb(179, 179, 219);
-    margin-top: 0;
-    padding: 10 10 10 10px;
-    text-align: center;     
-}
+.section-gap {
+    margin-top: 30px;
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ad2525;
-    font-size: 36pt;
+    color: aliceblue;
+    margin-right: 20px;
+    margin-left: 30px;
+    border: solid black 10px;
+    margin-bottom: 50px;
+    padding: 100px;
    
+
+
+
 }
 
-.content {
-    margin-left: 40px;
+.section-gap1 {
+    margin-top: 10px;
+
+    /* background-color: rgb(240, 238, 238); */
+    margin-right: 10px;
+    margin-left: 10px;
+    border: solid white 5px;
+    margin-bottom: 10px;
+    padding: 20px;
 }
 
-.section-gap{
-    padding-left: 40px;
-    background-color: rgb(214, 214, 214);
-    padding-top: 40px;
-    width: 100%;
 
-   
+
+.section-gap1 p,h2,h3,a{
+    color: rgb(226, 199, 164);
 }
 
-h1, h2, h3, h4 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
-    
+
+.section-gap2 {
+    margin-top: 10px;
+
+    background-color: rgb(240, 238, 238);
+    margin-right: 10px;
+    margin-left: 10px;
+    border: solid white 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.section-gap2 p,h2,h3,a{
+    color: rgb(204, 68, 5);
+}
+
+.nav-item
+{
+ margin:0px 0px 10px 30px;
+
+}
+
+body
+{
+   background-color: black; 
+}
+
+/* home.html */
+.box {
+
+    margin: 100px 100px 100px 100px;
+    float: left;
+
+
+}
+
+.box a,h1,h4 {
+
+    padding: 5%;
 }
 
 .date {
@@ -37,11 +79,14 @@ h1, h2, h3, h4 {
     float: right;
 }
 
-.post-form textarea, .post-form input {
+.post-form textarea,
+.post-form input {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
     color: #ffffff;
     float: right;
     font-size: 26pt;
@@ -50,8 +95,13 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
+    margin-left: 20px
 }
 
-.post h1 a, .post h1 a:visited {
-    color: #000000;
+.post p{
+    color: antiquewhite;
 }
+.post h1,p a:visited  {
+    color: #f3f3f3;
+}
+GwFnjrAfoSYbInptbujp5wQkd20-3rmB-j39sQ_03bcxxCDQ

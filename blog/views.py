@@ -6,20 +6,30 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
+from django.core.exceptions import PermissionDenied
+import requests
+import json
+
+
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('category')
+    posts = Post.objects.filter(
+        published_date__lte=timezone.now()).order_by('category')
+    
     return render(request, 'blog/post_list.html', {'posts': posts})
+
 
 @login_required
 def post_draft_list(request):
-    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
+    posts = Post.objects.filter(
+        published_date__isnull=True).order_by('created_date')
     return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
-@login_required
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
 
 @login_required
 def post_new(request):
@@ -36,6 +46,7 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -49,6 +60,7 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
 
 @login_required
 def post_publish(request, pk):
@@ -65,20 +77,21 @@ def publish(self):
 @login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.delete()
-    return redirect('post_list')
+    if request.user == post.author:
 
-
-def logout_view(request):
-    logout(request)
-
-
-def my_view(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-
+        post.delete()
+        return redirect('post_list')
     else:
-        return 0
+        raise PermissionDenied
+
+def see_news(request):
+
+    url = ('https://newsapi.org/v2/top-headlines?country=in&apiKey=d5afb4a608cc419488e3e42012a4d75c')
+    response = requests.get(url)
+    
+    json_object = response.json()
+    
+  
+    titles =json_object['articles']
+        # a = json.loads(response, indent=4, sort_keys=True)
+    return render(request, 'blog/front.html', {'titles':titles})

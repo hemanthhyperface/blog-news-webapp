@@ -4,16 +4,24 @@
 {% block content %}
     {% for post in posts %}
     <hr>
-    <div class="section-gap">
+    
     <div class="container-fluid ">
+        <div class="section-gap1 wow pulse">
+     
 
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        <h4><a href="">{{ post.category }}</a></h4>
-        <!-- <p>{{ post.text|linebreaksbr }}</p> -->
-    </div><div class="section-gap"></div>
+            <p>published: {{ post.published_date }}</p>
+            <p>Author: {{ post.author }}</p>
+          <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+          <h3><a href="">{{ post.category }}</a></h3>
+          <p>{{r}}</p>
+
+        
+
+       
+      </div>  
+    
 </div>
-<hr>
+
 
 
 {% endfor %}

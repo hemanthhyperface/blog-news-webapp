@@ -1,13 +1,11 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% load socialaccount %}
 
 
-<div class="section-gap">
     <div class="container-fluid text-center">
+        <div class="section-gap2">
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
 
@@ -22,8 +20,15 @@
 
             <br /> <br /> <input type="submit" class="btn-success btn-lg" value="login" />
             <a href="/accounts/signup"><button type="button" class="btn-info btn-lg">Signup</button></a>
+            <!-- <a href="{% provider_login_url 'github' %}">Sign Up</a> -->
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+    </div>
+        
+        
     </div>
 </div>
 {% endblock %}
